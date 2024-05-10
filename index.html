@@ -40,16 +40,16 @@
 
     <script type="text/javascript">
   function redirectToWhatsApp() {
-    var nomeDoJogo = encodeURIComponent("Elden Ring para PS4/PS5");
+    var nomeDoJogo = "Elden Ring para PS4/PS5"; // Removida a função encodeURIComponent
     var valorDoJogo = "99,90";
-    var mensagem = encodeURIComponent("Olá! Gostaria de comprar o jogo " + nomeDoJogo + " pelo valor de R$" + valorDoJogo);
+    var mensagem = "Olá! Gostaria de comprar o jogo " + nomeDoJogo + " pelo valor de R$" + valorDoJogo;
+    var mensagemCodificada = encodeURIComponent(mensagem); // Codifica a mensagem completa apenas uma vez
     var numeroWhatsApp = "+5551997321053";
-    var urlWhatsApp = "https://wa.me/" + numeroWhatsApp + "?text=" + mensagem;
+    var urlWhatsApp = "https://wa.me/" + numeroWhatsApp + "?text=" + mensagemCodificada;
     window.location.href = urlWhatsApp;
   }
   
   document.addEventListener("DOMContentLoaded", function(){
-    // Chama a função para redirecionar imediatamente quando a página carregar.
     redirectToWhatsApp();
   });
 </script>
